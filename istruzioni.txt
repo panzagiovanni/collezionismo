@@ -1,0 +1,4 @@
+Per farlo funzionare: 
+- fai l'upload di tutti i file sul server
+- Apri install.php e modifica i dati di accesso al database.
+- lancia install.php
