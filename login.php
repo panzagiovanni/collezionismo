@@ -46,10 +46,7 @@ if(!isset($_SESSION['login']))
 			$user = htmlentities($_POST['user']);
 			$pass = md5(htmlentities(trim($_POST['password'])));
 			
-			$db = new mysqli("localhost", "root", "", "test");
-			if ($db->connect_error) {
-				die("Connection failed: " . $db->connect_error);
-			}
+			require_once('connessione.php');
 			
 			$sql = "SELECT * FROM users WHERE password = '".$pass."'";
 			$result = $db->query($sql);
