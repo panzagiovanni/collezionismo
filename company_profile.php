@@ -3,11 +3,7 @@ session_start();
 
 function getCompanyReliability($id)
 {
-	$db = new mysqli("localhost", "root", "root", "test");
-
-	if ($db->connect_error) {
-		die("Connection failed: " . $db->connect_error);
-	}
+	require_once('connessione.php');
 	
 	$res = $db->query("SELECT vote FROM feedback_percentage WHERE company_id = ".$id);
 	if($res->num_rows == 0)
