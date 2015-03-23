@@ -46,6 +46,7 @@ if(!isset($_SESSION['login']))
 			$user = htmlentities($_POST['user']);
 			$pass = md5(htmlentities(trim($_POST['password'])));
 			
+			//creo la connessione con il DB
 			require_once('connessione.php');
 			
 			$sql = "SELECT * FROM users WHERE password = '".$pass."'";
